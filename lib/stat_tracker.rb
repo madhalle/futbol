@@ -1,6 +1,6 @@
-require 'CSV'
-require './lib/team'
-require './lib/game'
+require_relative 'CSV'
+require_relative './lib/team'
+require_relative './lib/game'
 
 class StatTracker
 
@@ -10,6 +10,10 @@ class StatTracker
   end
 
 # team_id,franchiseId,teamName,abbreviation,Stadium,link
+#self.csv so its a class method should return instance of itself.
+#instance of stat_tracker. Want one object returned want all this code in
+#entry point into the program. One place that knows everything. Collection
+#of teams, of games, etc. One instance of stat_tracker.
 
   def load_from_csv(root_path = "./data")
     CSV.foreach("#{root_path}/teams.csv", headers: true, header_converters: :symbol) do |row|
