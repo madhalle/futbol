@@ -23,7 +23,11 @@ class StatTrackerTest < Minitest::Test
     assert_equal 5, stat_tracker.total_games_per_team(3)
   end
 
-  def test_best_offense
+  def test_team_best_offense
     assert_equal "FC Dallas", stat_tracker.best_offense
+  end
+
+  def test_team_worst_offense
+    assert_equal "Team", stat_tracker.worst_offense 
   end
 end

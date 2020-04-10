@@ -47,6 +47,10 @@ class StatTracker
     @teams.size
   end
 
+  def worst_offense
+
+  end
+
   def best_offense
     # team with highest average goals per game
     # team_average = total_goals / all_games
