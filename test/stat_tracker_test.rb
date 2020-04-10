@@ -1,12 +1,13 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/stat_tracker'
+require 'rspec/autorun'
 
 class StatTrackerTest < Minitest::Test
   attr_reader :stat_tracker
   def setup
     @stat_tracker = StatTracker.new
-    stat_tracker.load_from_csv('./test/fixtures')
+    stat_tracker.from_csv('./test/fixtures')
   end
 
   def test_it_exists

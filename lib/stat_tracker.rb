@@ -1,6 +1,6 @@
-require_relative 'CSV'
-require_relative './lib/team'
-require_relative './lib/game'
+require_relative './team'
+require_relative './game'
+require 'CSV'
 
 class StatTracker
 
@@ -15,7 +15,7 @@ class StatTracker
 #entry point into the program. One place that knows everything. Collection
 #of teams, of games, etc. One instance of stat_tracker.
 
-  def load_from_csv(root_path = "./data")
+  def self.from_csv(root_path = "./data")
     CSV.foreach("#{root_path}/teams.csv", headers: true, header_converters: :symbol) do |row|
       data = {team_id: row[:team_id],
               franchiseid: row[:franchiseid],
